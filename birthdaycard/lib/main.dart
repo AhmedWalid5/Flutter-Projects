@@ -10,12 +10,11 @@ class BirthdayCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Color(0xFFD2BCD5),
         body: SingleChildScrollView(
-          child: Center(
-            child: Image(image: AssetImage('images/birthCard.png')),
-          ),
+          child: Image(image: AssetImage('images/birthCard.png')),
         ),
       ),
     );

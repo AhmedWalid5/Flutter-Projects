@@ -5,6 +5,8 @@ void main() {
 }
 
 class PointsCounter extends StatefulWidget {
+  const PointsCounter({super.key});
+
   @override
   State<PointsCounter> createState() => _PointsCounterState();
 }
@@ -25,162 +27,165 @@ class _PointsCounterState extends State<PointsCounter> {
           backgroundColor: Colors.orange,
           title: Text('Points Counter', style: TextStyle(color: Colors.white)),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                SizedBox(
-                  height: 500,
-                  child: Column(
-                    children: [
-                      Text('Team A', style: TextStyle(fontSize: 32)),
-                      Text('$teamAPoints', style: TextStyle(fontSize: 140)),
-                      ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            teamAPoints++;
-                          });
-                        },
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.all(8),
-                          backgroundColor: Colors.orange,
-                          minimumSize: Size(100, 40),
-                        ),
-                        child: Text(
-                          'Add 1 Point',
-                          style: TextStyle(fontSize: 18, color: Colors.black),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            teamAPoints = teamAPoints + 2;
-                          });
-                        },
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.all(8),
-                          backgroundColor: Colors.orange,
-                          minimumSize: Size(100, 40),
-                        ),
-                        child: Text(
-                          'Add 2 Point',
-                          style: TextStyle(fontSize: 18, color: Colors.black),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            teamAPoints = teamAPoints + 3;
-                          });
-                        },
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.all(8),
-                          backgroundColor: Colors.orange,
-                          minimumSize: Size(100, 40),
-                        ),
-                        child: Text(
-                          'Add 3 Point',
-                          style: TextStyle(fontSize: 18, color: Colors.black),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
 
-                SizedBox(
-                  height: 450,
-                  child: VerticalDivider(
-                    indent: 50,
-                    endIndent: 5,
-                    color: Colors.grey,
-                    thickness: 0.5,
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                    height: 500,
+                    child: Column(
+                      children: [
+                        Text('Team A', style: TextStyle(fontSize: 32)),
+                        Text('$teamAPoints', style: TextStyle(fontSize: 140)),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              teamAPoints++;
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.all(8),
+                            backgroundColor: Colors.orange,
+                            minimumSize: Size(100, 40),
+                          ),
+                          child: Text(
+                            'Add 1 Point',
+                            style: TextStyle(fontSize: 18, color: Colors.black),
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              teamAPoints = teamAPoints + 2;
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.all(8),
+                            backgroundColor: Colors.orange,
+                            minimumSize: Size(100, 40),
+                          ),
+                          child: Text(
+                            'Add 2 Point',
+                            style: TextStyle(fontSize: 18, color: Colors.black),
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              teamAPoints = teamAPoints + 3;
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.all(8),
+                            backgroundColor: Colors.orange,
+                            minimumSize: Size(100, 40),
+                          ),
+                          child: Text(
+                            'Add 3 Point',
+                            style: TextStyle(fontSize: 18, color: Colors.black),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
 
-                SizedBox(
-                  height: 500,
-                  child: Column(
-                    children: [
-                      Text('Team B', style: TextStyle(fontSize: 32)),
-                      Text('$teamBPoints', style: TextStyle(fontSize: 140)),
-                      ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            teamBPoints = teamBPoints + 1;
-                          });
-                        },
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.all(8),
-                          backgroundColor: Colors.orange,
-                          minimumSize: Size(100, 40),
-                        ),
-                        child: Text(
-                          'Add 1 Point',
-                          style: TextStyle(fontSize: 18, color: Colors.black),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            teamBPoints = teamBPoints + 2;
-                          });
-                        },
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.all(8),
-                          backgroundColor: Colors.orange,
-                          minimumSize: Size(100, 40),
-                        ),
-                        child: Text(
-                          'Add 2 Point',
-                          style: TextStyle(fontSize: 18, color: Colors.black),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            teamBPoints = teamBPoints + 3;
-                          });
-                        },
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.all(8),
-                          backgroundColor: Colors.orange,
-                          minimumSize: Size(100, 40),
-                        ),
-                        child: Text(
-                          'Add 3 Point',
-                          style: TextStyle(fontSize: 18, color: Colors.black),
-                        ),
-                      ),
-                    ],
+                  SizedBox(
+                    height: 450,
+                    child: VerticalDivider(
+                      indent: 50,
+                      endIndent: 5,
+                      color: Colors.grey,
+                      thickness: 0.5,
+                    ),
                   ),
+
+                  SizedBox(
+                    height: 500,
+                    child: Column(
+                      children: [
+                        Text('Team B', style: TextStyle(fontSize: 32)),
+                        Text('$teamBPoints', style: TextStyle(fontSize: 140)),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              teamBPoints = teamBPoints + 1;
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.all(8),
+                            backgroundColor: Colors.orange,
+                            minimumSize: Size(100, 40),
+                          ),
+                          child: Text(
+                            'Add 1 Point',
+                            style: TextStyle(fontSize: 18, color: Colors.black),
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              teamBPoints = teamBPoints + 2;
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.all(8),
+                            backgroundColor: Colors.orange,
+                            minimumSize: Size(100, 40),
+                          ),
+                          child: Text(
+                            'Add 2 Point',
+                            style: TextStyle(fontSize: 18, color: Colors.black),
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              teamBPoints = teamBPoints + 3;
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.all(8),
+                            backgroundColor: Colors.orange,
+                            minimumSize: Size(100, 40),
+                          ),
+                          child: Text(
+                            'Add 3 Point',
+                            style: TextStyle(fontSize: 18, color: Colors.black),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 150),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    teamAPoints = 0;
+                    teamBPoints = 0;
+                  });
+                },
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.all(8),
+                  backgroundColor: Colors.orange,
+                  minimumSize: Size(100, 40),
                 ),
-              ],
-            ),
-            SizedBox(height: 150),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  teamAPoints = 0;
-                  teamBPoints = 0;
-                });
-              },
-              style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.all(8),
-                backgroundColor: Colors.orange,
-                minimumSize: Size(100, 40),
+                child: Text(
+                  'Reset',
+                  style: TextStyle(fontSize: 18, color: Colors.black),
+                ),
               ),
-              child: Text(
-                'Reset',
-                style: TextStyle(fontSize: 18, color: Colors.black),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
