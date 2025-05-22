@@ -12,7 +12,11 @@ class BirthdayCard extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Color(0xFFD2BCD5),
-        body: Image(image: AssetImage('images/birthCard.png')),
+        body: SingleChildScrollView(
+          child: Center(
+            child: Image(image: AssetImage('images/birthCard.png')),
+          ),
+        ),
       ),
     );
   }
